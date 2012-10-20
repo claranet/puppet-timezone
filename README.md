@@ -1,7 +1,7 @@
 # Puppet Timezone Module #
 
 A very basic Puppet module to set the timezone properly.  Works on
-RHEL/CentOS and Debian and Ubuntu.
+RHEL/CentOS/Suse and Debian and Ubuntu.
 
 ## Usage ##
 
