@@ -16,10 +16,7 @@ class timezone (
   $region, 
   $locality,
   $hwutc = "true"){
-
-  package { "tzdata":
-    ensure => "installed",
-  }
+  
 
   file { "/etc/localtime":
     # We copy the timezone file into /etc to cater for
@@ -29,20 +26,39 @@ class timezone (
 
   # Debian and Enterprise Linux have differing ways of recording
   # clock settings
-  if ($osfamily == 'Debian') {
-    file { "/etc/timezone":
-      owner   => 'root',
-      group   => 'root',
-      mode    => 0644,
-      content => template('timezone/debian.erb'),
+  case $osfamily {
+    'Debian': {
+        package { "tzdata":
+            ensure => "present",
+        }
+        file { "/etc/timezone":
+            owner   => 'root',
+            group   => 'root',
+            mode    => 0644,
+            content => template('timezone/debian.erb'),
+        }
     }
-  }
-  elsif ($osfamily == 'RedHat') {
-    file { "/etc/sysconfig/clock":
-      owner   => 'root',
-      group   => 'root',
-      mode    => 0644,
-      content => template('timezone/el.erb'),
+    'RedHat': {
+        package { "tzdata":
+            ensure => "present",
+         }
+        file { "/etc/sysconfig/clock":
+            owner   => 'root',
+            group   => 'root',
+            mode    => 0644,
+            content => template('timezone/el.erb'),
+        }
     }
+    'Suse': {
+        package { "timezone":
+            ensure => "present",
+        }
+        file { "/etc/sysconfig/clock":
+            owner   => 'root',
+            group   => 'root',
+            mode    => 0644,
+            content => template('timezone/suse.erb'),
+        }
+     }
   }
 }
