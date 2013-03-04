@@ -11,3 +11,7 @@ class { "timezone":
   region   => "Europe",
   locality => "London",
 }
+
+## License
+
+Simplified BSD License
