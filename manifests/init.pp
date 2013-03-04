@@ -18,10 +18,9 @@ class timezone (
   $hwutc = "true"){
   
 
-  file { "/etc/localtime":
-    # We copy the timezone file into /etc to cater for
-    # situations when /usr is not available
-    source => "file:///usr/share/zoneinfo/$region/$locality",
+  file { '/etc/localtime':
+    ensure => link,
+    target => "/usr/share/zoneinfo/${region}/${locality}",
   }
 
   # Debian and Enterprise Linux have differing ways of recording
