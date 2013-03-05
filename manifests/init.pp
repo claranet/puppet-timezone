@@ -15,7 +15,7 @@
 class timezone (
   $region, 
   $locality,
-  $hwutc = "true"){
+  $hwutc = true){
   
 
   file { "/etc/localtime":
@@ -28,10 +28,10 @@ class timezone (
   # clock settings
   case $osfamily {
     'Debian': {
-        package { "tzdata":
-            ensure => "present",
+        package { 'tzdata':
+            ensure => present,
         }
-        file { "/etc/timezone":
+        file { '/etc/timezone':
             owner   => 'root',
             group   => 'root',
             mode    => 0644,
@@ -39,10 +39,10 @@ class timezone (
         }
     }
     'RedHat': {
-        package { "tzdata":
-            ensure => "present",
+        package { 'tzdata':
+            ensure => present,
          }
-        file { "/etc/sysconfig/clock":
+        file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
             mode    => 0644,
@@ -50,10 +50,10 @@ class timezone (
         }
     }
     'Suse': {
-        package { "timezone":
-            ensure => "present",
+        package { 'timezone':
+            ensure => present,
         }
-        file { "/etc/sysconfig/clock":
+        file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
             mode    => 0644,
