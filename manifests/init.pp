@@ -15,13 +15,16 @@
 class timezone (
   $region, 
   $locality,
-  $hwutc = true){
+  $hwutc = 'true'){
   
 
-  file { "/etc/localtime":
+  file { '/etc/localtime':
     # We copy the timezone file into /etc to cater for
     # situations when /usr is not available
-    source => "file:///usr/share/zoneinfo/$region/$locality",
+    source  => "file:///usr/share/zoneinfo/${region}/${locality}",
+    links   => follow,
+    replace => true,
+    mode    => 644
   }
 
   # Debian and Enterprise Linux have differing ways of recording
