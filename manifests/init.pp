@@ -62,6 +62,21 @@ class timezone (
             mode    => 0644,
             content => template('timezone/suse.erb'),
         }
-     }
+    }
+    'Linux': {
+      case $operatingsystem {
+        'Gentoo': {
+          package { 'sys-libs/timezone-data':
+            ensure => present,
+          }
+          file { '/etc/conf.d/hwclock':
+            owner   => 'root',
+            group   => 'root',
+            mode    => 0644,
+            content => template('timezone/gentoo.erb'),
+          }
+        }
+      }
+    }
   }
 }
