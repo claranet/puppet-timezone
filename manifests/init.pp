@@ -15,7 +15,7 @@
 class timezone (
   $region, 
   $locality,
-  $hwutc = 'true'){
+  $hwutc = true){
   
 
   file { '/etc/localtime':
