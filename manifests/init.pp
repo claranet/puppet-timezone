@@ -15,7 +15,7 @@
 class timezone (
   $region, 
   $locality,
-  $hwutc = 'true'){
+  $hwutc = true){
   
 
   file { '/etc/localtime':
@@ -33,6 +33,7 @@ class timezone (
     'Debian': {
         package { 'tzdata':
             ensure => present,
+            before => File['/etc/localtime'],
         }
         file { '/etc/timezone':
             owner   => 'root',
@@ -44,6 +45,7 @@ class timezone (
     'RedHat': {
         package { 'tzdata':
             ensure => present,
+            before => File['/etc/localtime'],
          }
         file { '/etc/sysconfig/clock':
             owner   => 'root',
@@ -55,6 +57,7 @@ class timezone (
     'Suse': {
         package { 'timezone':
             ensure => present,
+            before => File['/etc/localtime'],
         }
         file { '/etc/sysconfig/clock':
             owner   => 'root',
@@ -68,6 +71,7 @@ class timezone (
         'Gentoo': {
           package { 'sys-libs/timezone-data':
             ensure => present,
+            before => File['/etc/localtime'],
           }
           file { '/etc/conf.d/hwclock':
             owner   => 'root',
