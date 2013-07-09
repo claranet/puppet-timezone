@@ -78,8 +78,14 @@ class timezone (
             mode    => '0644',
             content => template('timezone/gentoo.erb'),
           }
-        }
+        },
+        default: {
+            fail("The OS ${::operatingsystem} is not supported by this module.")
+        },
       }
-    }
+    },
+    default: {
+        fail("The OS family ${::osfamily} is not supported by this module.")
+    },
   }
 }
