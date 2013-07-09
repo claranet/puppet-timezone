@@ -28,7 +28,7 @@ class timezone (
 
   # Debian and Enterprise Linux have differing ways of recording
   # clock settings
-  case $osfamily {
+  case $::osfamily {
     'Debian': {
         package { 'tzdata':
             ensure => present,
@@ -66,7 +66,7 @@ class timezone (
         }
     }
     'Linux': {
-      case $operatingsystem {
+      case $::operatingsystem {
         'Gentoo': {
           package { 'sys-libs/timezone-data':
             ensure => present,
