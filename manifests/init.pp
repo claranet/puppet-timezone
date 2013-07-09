@@ -13,10 +13,9 @@
 #
 
 class timezone (
-  $region, 
+  $region,
   $locality,
   $hwutc = true){
-  
 
   file { '/etc/localtime':
     # We copy the timezone file into /etc to cater for
@@ -46,7 +45,7 @@ class timezone (
         package { 'tzdata':
             ensure => present,
             before => File['/etc/localtime'],
-         }
+        }
         file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
