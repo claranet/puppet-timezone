@@ -13,8 +13,8 @@
 #
 
 class timezone (
-  $region,
-  $locality,
+  $region = 'Etc',
+  $locality = 'UTC',
   $hwutc = true){
 
   file { '/etc/localtime':
