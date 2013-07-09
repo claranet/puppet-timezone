@@ -23,7 +23,7 @@ class timezone (
     source  => "file:///usr/share/zoneinfo/${region}/${locality}",
     links   => follow,
     replace => true,
-    mode    => 644
+    mode    => '0644',
   }
 
   # Debian and Enterprise Linux have differing ways of recording
@@ -37,7 +37,7 @@ class timezone (
         file { '/etc/timezone':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/debian.erb'),
         }
     }
@@ -49,7 +49,7 @@ class timezone (
         file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/el.erb'),
         }
     }
@@ -61,7 +61,7 @@ class timezone (
         file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/suse.erb'),
         }
     }
@@ -75,7 +75,7 @@ class timezone (
           file { '/etc/conf.d/hwclock':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/gentoo.erb'),
           }
         }
