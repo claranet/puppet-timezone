@@ -13,10 +13,9 @@
 #
 
 class timezone (
-  $region, 
-  $locality,
+  $region = 'Etc',
+  $locality = 'UTC',
   $hwutc = true){
-  
 
   file { '/etc/localtime':
     # We copy the timezone file into /etc to cater for
@@ -24,12 +23,12 @@ class timezone (
     source  => "file:///usr/share/zoneinfo/${region}/${locality}",
     links   => follow,
     replace => true,
-    mode    => 644
+    mode    => '0644',
   }
 
   # Debian and Enterprise Linux have differing ways of recording
   # clock settings
-  case $osfamily {
+  case $::osfamily {
     'Debian': {
         package { 'tzdata':
             ensure => present,
@@ -38,7 +37,7 @@ class timezone (
         file { '/etc/timezone':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/debian.erb'),
         }
     }
@@ -46,11 +45,11 @@ class timezone (
         package { 'tzdata':
             ensure => present,
             before => File['/etc/localtime'],
-         }
+        }
         file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/el.erb'),
         }
     }
@@ -62,12 +61,12 @@ class timezone (
         file { '/etc/sysconfig/clock':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/suse.erb'),
         }
     }
     'Linux': {
-      case $operatingsystem {
+      case $::operatingsystem {
         'Gentoo': {
           package { 'sys-libs/timezone-data':
             ensure => present,
@@ -76,11 +75,17 @@ class timezone (
           file { '/etc/conf.d/hwclock':
             owner   => 'root',
             group   => 'root',
-            mode    => 0644,
+            mode    => '0644',
             content => template('timezone/gentoo.erb'),
           }
-        }
+        },
+        default: {
+            fail("The OS ${::operatingsystem} is not supported by this module.")
+        },
       }
-    }
+    },
+    default: {
+        fail("The OS family ${::osfamily} is not supported by this module.")
+    },
   }
 }
