@@ -1,5 +1,5 @@
 name    'bashtoni-timezone'
-version '0.1.0'
+version '0.1.1'
 author 'Sam Bashton'
 license 'Simplified BSD'
 summary 'Configure /etc/localtime and associated system files'
