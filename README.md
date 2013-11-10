@@ -10,17 +10,17 @@ Works with Puppet 2.7+ on other distros.
 ## Usage ##
 
 In your manifest:
-
+```puppet
 class { 'timezone':
   region   => 'Europe',
   locality => 'London',
 }
-
+```
 Or you can simply include timezone and set the details via hiera:
-
-timezone::region: Europe
-timezone::locality: London
-
+```yaml
+timezone::region: 'Europe'
+timezone::locality: 'London'
+```
 
 ## License
 
