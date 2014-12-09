@@ -1,0 +1,78 @@
+{
+  "name": "bashtoni-timezone",
+  "version": "0.1.2",
+  "source": "https://github.com/BashtonLtd/puppet-timezone",
+  "author": "Bashton Ltd",
+  "license": "BSD-2-Clause",
+  "summary": "Configure /etc/localtime and associated system files",
+  "description": "Configure the timezone on various Linux distributions",
+  "project_page": "https://github.com/BashtonLtd/puppet-timezone",
+  "issues_url": "https://github.com/BashtonLtd/puppet-timezone/issues",
+  "tags": [ "linux", "timezone" ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.1.0"
+    }
+  ]
+}
