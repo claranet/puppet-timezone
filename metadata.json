@@ -72,7 +72,7 @@
       ]
     }
   ],
-  "dependencies": [
+  "requirements": [
     {
       "name": "pe",
       "version_requirement": "3.x"
