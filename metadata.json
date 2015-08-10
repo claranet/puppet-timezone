@@ -12,7 +12,7 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "5",
         "6",
         "7"
@@ -20,7 +20,7 @@
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "5",
         "6",
         "7"
@@ -28,14 +28,14 @@
     },
     {
       "operatingsystem": "OracleLinux",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "6",
         "7"
       ]
     },
     {
       "operatingsystem": "Scientific",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "5",
         "6",
         "7"
@@ -43,21 +43,21 @@
     },
     {
       "operatingsystem": "Amazon",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "3",
         "4"
       ]
     },
     {
       "operatingsystem": "Debian",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "6",
         "7"
       ]
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "10.04",
         "12.04",
         "14.04"
@@ -65,7 +65,7 @@
     },
     {
       "operatingsystem": "SLES",
-      "operatingsystemrelease": [
+      "operatingsystemmajrelease": [
         "10",
         "11",
         "12"
