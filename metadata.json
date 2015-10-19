@@ -81,5 +81,6 @@
       "name": "puppet",
       "version_requirement": ">= 3.1.0"
     }
-  ]
+  ],
+  "dependencies": []
 }
