@@ -96,6 +96,9 @@ class timezone (
         }
       }
     }
+    'Archlinux' : {
+      # nothing else to do for arch
+    }
     default: {
         fail("The OS family ${::osfamily} is not supported by this module.")
     }
