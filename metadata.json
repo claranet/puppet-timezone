@@ -1,6 +1,6 @@
 {
   "name": "bashtoni-timezone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "https://github.com/BashtonLtd/puppet-timezone",
   "author": "Bashton Ltd",
   "license": "BSD-2-Clause",
@@ -10,6 +10,9 @@
   "issues_url": "https://github.com/BashtonLtd/puppet-timezone/issues",
   "tags": [ "linux", "timezone" ],
   "operatingsystem_support": [
+    {
+      "operatingsystem": "Archlinux"
+    },
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [

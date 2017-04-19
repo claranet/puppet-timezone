@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 2017-04-19
+
+  - Added support for Archlinux
+
 ## 1.0.0 2015-07-16
 
   - Added support for Amazon Linux
