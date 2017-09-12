@@ -13,9 +13,10 @@
 #
 
 class timezone (
-  $region = 'Etc',
+  $region   = 'Etc',
   $locality = 'UTC',
-  $hwutc = true){
+  $hwutc    = true
+){
 
   file { '/etc/localtime':
     # We copy the timezone file into /etc to cater for
@@ -23,6 +24,8 @@ class timezone (
     source  => "file:///usr/share/zoneinfo/${region}/${locality}",
     links   => follow,
     replace => true,
+    owner   => 'root',
+    group   => 'root',
     mode    => '0644',
   }
 
