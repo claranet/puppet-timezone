@@ -1,26 +1,47 @@
-# Class: timezone
+# == Class: timezone
 #
 # This module manages the timezone on a machine
-# Tested with Puppet 2.7 (should work with >=2.6)
 #
-# Parameters:
+# === Parameters
 #
-# region   => 'Europe'
-# locality => 'London'
-# hwutc    => 'true' (optional, false if your hw clock is in local time)
+# [*region*]
+#   Geographic region
+#   Default: 'Etc' (String)
 #
-# For timezone name use region Etc, eg region => 'Etc', locality => 'GMT'
+# [*locality*]
+#   Timezone locality/city
+#   Default: 'UTC' (String)
 #
-
+# [*hwutc*]
+#   If your hardware lock uses UTC
+#   Default: true (Boolean)
+#
+# === Examples
+#
+# class { '::timezone':
+#   region   => 'Europe',
+#   locality => 'London',
+# }
+#
+# === Authors
+#
+# Sam Bashton <sam.bashton@claranet.uk>
+# Craig Watson <craig.watson@claranet.uk>
+#
+# === Copyright
+#
+# Copyright 2012 Bashton Ltd
+# Copyright 2017 Claranet
+#
 class timezone (
   $region   = 'Etc',
   $locality = 'UTC',
   $hwutc    = true
 ){
 
+  # We copy the timezone file into /etc to cater for situations when /usr is
+  # not available
   file { '/etc/localtime':
-    # We copy the timezone file into /etc to cater for
-    # situations when /usr is not available
     source  => "file:///usr/share/zoneinfo/${region}/${locality}",
     links   => follow,
     replace => true,
@@ -29,8 +50,7 @@ class timezone (
     mode    => '0644',
   }
 
-  # Debian and Enterprise Linux have differing ways of recording
-  # clock settings
+  # Debian and Enterprise Linux have differing ways of recording clock settings
   case $::osfamily {
     'Archlinux': {
         package { 'tzdata':
