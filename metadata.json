@@ -73,6 +73,9 @@
         "11",
         "12"
       ]
+    },
+    {
+      "operatingsystem": "Archlinux"
     }
   ],
   "requirements": [
