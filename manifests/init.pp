@@ -32,6 +32,12 @@ class timezone (
   # Debian and Enterprise Linux have differing ways of recording
   # clock settings
   case $::osfamily {
+    'Archlinux': {
+        package { 'tzdata':
+            ensure => present,
+            before => File['/etc/localtime'],
+        }
+    }
     'Debian': {
         package { 'tzdata':
             ensure => present,
