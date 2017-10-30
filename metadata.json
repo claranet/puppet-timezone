@@ -1,84 +1,55 @@
 {
-  "name": "bashtoni-timezone",
-  "version": "1.0.1",
-  "source": "https://github.com/BashtonLtd/puppet-timezone",
-  "author": "Bashton Ltd",
-  "license": "BSD-2-Clause",
-  "summary": "Configure /etc/localtime and associated system files",
-  "description": "Configure the timezone on various Linux distributions",
-  "project_page": "https://github.com/BashtonLtd/puppet-timezone",
-  "issues_url": "https://github.com/BashtonLtd/puppet-timezone/issues",
-  "tags": [ "linux", "timezone" ],
+  "name"                   : "claranet-timezone",
+  "version"                : "2.0.0",
+  "source"                 : "https://github.com/claranet/puppet-timezone",
+  "author"                 : "Claranet",
+  "license"                : "Apache-2.0",
+  "summary"                : "Configure /etc/localtime and associated system files",
+  "description"            : "Configure the timezone on various Linux distributions",
+  "project_page"           : "https://github.com/claranet/puppet-timezone",
+  "issues_url"             : "https://github.com/claranet/puppet-timezone/issues",
+  "tags"                   : [ "linux", "timezone" ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Archlinux"
     },
     {
-      "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
-        "5",
-        "6",
-        "7"
-      ]
+      "operatingsystem"        : "RedHat",
+      "operatingsystemrelease" : [ "6", "7" ]
     },
     {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "5",
-        "6",
-        "7"
-      ]
+      "operatingsystem"        : "CentOS",
+      "operatingsystemrelease" : [ "6", "7" ]
     },
     {
-      "operatingsystem": "OracleLinux",
-      "operatingsystemrelease": [
-        "6",
-        "7"
-      ]
+      "operatingsystem"        : "OracleLinux",
+      "operatingsystemrelease" : [ "6", "7" ]
     },
     {
-      "operatingsystem": "Scientific",
-      "operatingsystemrelease": [
-        "5",
-        "6",
-        "7"
-      ]
+      "operatingsystem"        : "Scientific",
+      "operatingsystemrelease" : [ "6", "7" ]
     },
     {
-      "operatingsystem": "Amazon",
-      "operatingsystemrelease": [
-        "3",
-        "4"
-      ]
+      "operatingsystem"        : "Amazon",
+      "operatingsystemrelease" : [ "3", "4" ]
     },
     {
-      "operatingsystem": "Debian",
-      "operatingsystemrelease": [
-        "6",
-        "7"
-      ]
+      "operatingsystem"        : "Debian",
+      "operatingsystemrelease" : [ "7", "8" ]
     },
     {
-      "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [
-        "10.04",
-        "12.04",
-        "14.04"
-      ]
+      "operatingsystem"       : "Ubuntu",
+      "operatingsystemrelease": [ "14.04", "16.04" ]
     },
     {
-      "operatingsystem": "SLES",
-      "operatingsystemrelease": [
-        "10",
-        "11",
-        "12"
-      ]
+      "operatingsystem"        : "SLES",
+      "operatingsystemrelease" : [ "10", "11", "12" ]
     }
   ],
   "requirements": [
     {
-      "name": "puppet",
-      "version_requirement": ">= 3.1.0"
+      "name"                : "puppet",
+      "version_requirement" : ">= 3.8.7"
     }
   ],
   "dependencies": []
