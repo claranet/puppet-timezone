@@ -1,56 +1,89 @@
 {
-  "name"                   : "claranet-timezone",
-  "version"                : "2.0.0",
-  "source"                 : "https://github.com/claranet/puppet-timezone",
-  "author"                 : "Claranet",
-  "license"                : "Apache-2.0",
-  "summary"                : "Configure /etc/localtime and associated system files",
-  "description"            : "Configure the timezone on various Linux distributions",
-  "project_page"           : "https://github.com/claranet/puppet-timezone",
-  "issues_url"             : "https://github.com/claranet/puppet-timezone/issues",
-  "tags"                   : [ "linux", "timezone" ],
+  "name": "claranet-timezone",
+  "version": "2.0.0",
+  "author": "Claranet",
+  "summary": "Configure /etc/localtime and associated system files",
+  "license": "Apache-2.0",
+  "source": "https://github.com/claranet/puppet-timezone",
+  "project_page": "https://github.com/claranet/puppet-timezone",
+  "issues_url": "https://github.com/claranet/puppet-timezone/issues",
+  "dependencies": [
+
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Archlinux"
     },
     {
-      "operatingsystem"        : "RedHat",
-      "operatingsystemrelease" : [ "6", "7" ]
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     },
     {
-      "operatingsystem"        : "CentOS",
-      "operatingsystemrelease" : [ "6", "7" ]
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     },
     {
-      "operatingsystem"        : "OracleLinux",
-      "operatingsystemrelease" : [ "6", "7" ]
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     },
     {
-      "operatingsystem"        : "Scientific",
-      "operatingsystemrelease" : [ "6", "7" ]
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     },
     {
-      "operatingsystem"        : "Amazon",
-      "operatingsystemrelease" : [ "3", "4" ]
+      "operatingsystem": "Amazon",
+      "operatingsystemrelease": [
+        "3",
+        "4"
+      ]
     },
     {
-      "operatingsystem"        : "Debian",
-      "operatingsystemrelease" : [ "7", "8" ]
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
     },
     {
-      "operatingsystem"       : "Ubuntu",
-      "operatingsystemrelease": [ "14.04", "16.04" ]
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "16.04"
+      ]
     },
     {
-      "operatingsystem"        : "SLES",
-      "operatingsystemrelease" : [ "10", "11", "12" ]
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
     }
   ],
   "requirements": [
     {
-      "name"                : "puppet",
-      "version_requirement" : ">= 3.8.7"
+      "name": "puppet",
+      "version_requirement": ">= 3.8.7"
     }
   ],
-  "dependencies": []
+  "description": "Configure the timezone on various Linux distributions",
+  "tags": [
+    "linux",
+    "timezone"
+  ],
+  "pdk-version": "1.7.0",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.7.0-0-g57412ed"
 }
