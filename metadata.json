@@ -1,6 +1,6 @@
 {
   "name": "claranet-timezone",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Claranet",
   "summary": "Configure /etc/localtime and associated system files",
   "license": "Apache-2.0",

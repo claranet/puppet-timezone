@@ -4,6 +4,9 @@ Release notes for the claranet/puppet-timezone module.
 
 ------------------------------------------
 
+## 2.0.1 - 2018-08-30
+  * This module is now compatible with the Puppet Development Kit - this can be verified by running `pdk validate`
+
 ## 2.0.0 - 2017-10-30
   * Added support for ArchLinux
   * Major version bump following rebranding
